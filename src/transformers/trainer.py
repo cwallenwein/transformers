@@ -779,6 +779,7 @@ class Trainer:
             "collate_fn": data_collator,
             "num_workers": self.args.dataloader_num_workers,
             "pin_memory": self.args.dataloader_pin_memory,
+            "prefetch_factor": 10_000
         }
 
         if not isinstance(train_dataset, torch.utils.data.IterableDataset):
